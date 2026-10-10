@@ -3,3 +3,4 @@ razorpay==2.0.1
 gunicorn
 whitenoise
 gunicorn
+whitenoise
