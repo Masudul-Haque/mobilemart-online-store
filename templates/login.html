@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - MobileMart</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+    <div class="logo">
+        📱 MobileMart
+    </div>
+
+    <div class="menu">
+
+        <a href="{% url 'login' %}">🔒 Login</a>
+        <a href="{% url 'home' %}">Home</a>
+
+    </div>
+
+    <div class="user-menu">
+
+    </div>
+
+</nav>
+
+
+    <!-- Login Section -->
+
+    <section class="login-page">
+
+        <div class="login-box">
+
+            <h1>Welcome Back 👋</h1>
+
+            <p>Login to your MobileMart account</p>
+
+
+            <!-- Success / Error Messages -->
+
+            {% if messages %}
+
+                {% for message in messages %}
+
+                    <p>{{ message }}</p>
+
+                {% endfor %}
+
+            {% endif %}
+
+
+            <!-- Login Form -->
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+
+                <div class="login-options">
+
+                    <label>
+                        <input type="checkbox" name="remember">
+                        Remember Me
+                    </label>
+
+                    <a href="#">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <button type="submit">
+                    Login
+                </button>
+
+
+                <p class="signup-text">
+
+                    Don't have an account?
+
+                    <a href="{% url 'register' %}">
+                        Create Account
+                    </a>
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>📱 MobileMart</h3>
+
+                <p>
+                    Your trusted online mobile store.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <p>
+                    <a href="{% url 'home' %}">Home</a>
+                </p>
+
+                <p>
+                    <a href="{% url 'mobiles' %}">Mobiles</a>
+                </p>
+
+                <p>
+                    <a href="{% url 'brands' %}">Brands</a>
+                </p>
+
+                <p>
+                    <a href="{% url 'about' %}">About</a>
+                </p>
+
+                <p>
+                    <a href="{% url 'contact' %}">Contact</a>
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contact Us</h3>
+
+                <p>📧 mobilemart@gmail.com</p>
+
+                <p>📞 +91 9876543210</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 MobileMart. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

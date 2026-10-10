@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us - MobileMart</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+/* ===== Navbar Final Fix ===== */
+
+.navbar {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: 70px !important;
+    padding: 0 60px !important;
+}
+
+.navbar .logo {
+    flex-shrink: 0 !important;
+}
+
+.navbar .menu {
+    display: flex !important;
+    align-items: center !important;
+    gap: 25px !important;
+    margin-left: 50px !important;
+}
+
+.navbar .cart,
+.navbar .wishlist {
+    position: absolute !important;
+    top: 0 !important;
+    height: 70px !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 19px !important;
+    white-space: nowrap !important;
+}
+
+.navbar .cart {
+    right: 150px !important;
+}
+
+.navbar .wishlist {
+    right: 60px !important;
+}
+
+.navbar .cart:hover,
+.navbar .wishlist:hover {
+    color: #38bdf8 !important;
+    transform: scale(1.08);
+}
+</style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            📱 MobileMart
+        </div>
+
+        <div class="menu">
+
+    <a href="{% url 'home' %}">
+        Home
+    </a>
+
+    <a href="{% url 'mobiles' %}">
+        Mobiles
+    </a>
+
+    <a href="{% url 'brands' %}">
+        Brands
+    </a>
+
+    <a href="{% url 'about' %}">
+        About
+    </a>
+
+    <a href="{% url 'contact' %}">
+        Contact
+    </a>
+
+    <a href="{% url 'logout' %}">
+        🚪 Logout
+    </a>
+
+</div>
+
+        <a href="{% url 'cart' %}" class="cart">
+    🛒 Cart
+</a>
+
+
+<a href="{% url 'wishlist' %}" class="wishlist">
+    ❤️ Wishlist
+</a>
+
+    </nav>
+
+
+    <!-- About Section -->
+
+    <section class="about-page">
+
+        <h1>About MobileMart</h1>
+
+        <p class="about-intro">
+            Welcome to MobileMart, your trusted online mobile store.
+        </p>
+
+
+        <div class="about-content">
+
+
+            <div class="about-box">
+
+                <h2>📱 Who We Are</h2>
+
+                <p>
+                    MobileMart is an online mobile store where
+                    customers can explore and choose smartphones
+                    from different popular brands.
+                </p>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <h2>🎯 Our Mission</h2>
+
+                <p>
+                    Our mission is to provide customers with a
+                    simple, convenient and user-friendly platform
+                    to find their perfect smartphone.
+                </p>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <h2>⭐ Why Choose Us?</h2>
+
+                <p>
+                    We provide a wide range of smartphones,
+                    popular brands, easy product browsing and
+                    a simple online shopping experience.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Our Services -->
+
+        <h2 class="service-title">Our Services</h2>
+
+
+        <div class="services">
+
+            <div class="service-box">
+                <h3>📱 Wide Range</h3>
+                <p>
+                    Explore smartphones from popular brands.
+                </p>
+            </div>
+
+
+            <div class="service-box">
+                <h3>💰 Best Prices</h3>
+                <p>
+                    Find smartphones at competitive prices.
+                </p>
+            </div>
+
+
+            <div class="service-box">
+                <h3>🛒 Easy Shopping</h3>
+                <p>
+                    Simple and user-friendly shopping experience.
+                </p>
+            </div>
+
+
+            <div class="service-box">
+                <h3>🔒 Secure</h3>
+                <p>
+                    Safe and reliable online shopping platform.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-content">
+
+
+            <div>
+
+                <h3>📱 MobileMart</h3>
+
+                <p>
+                    Your trusted online mobile store.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <p>
+                    <a href="index.html">Home</a>
+                </p>
+
+                <p>
+                    <a href="mobiles.html">Mobiles</a>
+                </p>
+
+                <p>
+                    <a href="brands.html">Brands</a>
+                </p>
+
+                <p>
+                    <a href="about.html">About</a>
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contact Us</h3>
+
+                <p>📧 mobilemart@gmail.com</p>
+
+                <p>📞 +91 9876543210</p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 MobileMart. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ mobile.name }} - MobileMart</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    <style>
+
+        /* ================= RECOMMENDED MOBILES ================= */
+
+        .recommended-section {
+            width: 90%;
+            margin: 60px auto;
+            text-align: center;
+        }
+
+        .recommended-section h2 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .recommended-subtitle {
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .recommended-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .recommended-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+            transition: 0.3s ease;
+        }
+
+        .recommended-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+        }
+
+        .recommended-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .recommended-card h3 {
+            font-size: 18px;
+            margin: 8px 0;
+        }
+
+        .recommended-brand {
+            color: #777;
+            margin: 5px 0;
+        }
+
+        .recommended-price {
+            font-size: 21px;
+            font-weight: bold;
+            margin: 12px 0;
+        }
+
+        .recommended-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+            transition: 0.3s;
+        }
+
+        .recommended-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .no-recommendation {
+            color: #777;
+            font-size: 16px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            📱 MobileMart
+        </div>
+
+
+        <div class="menu">
+
+            {% if request.user.is_authenticated %}
+
+                <a href="{% url 'home' %}">Home</a>
+
+                <a href="{% url 'mobiles' %}">Mobiles</a>
+
+                <a href="{% url 'brands' %}">Brands</a>
+
+                <a href="{% url 'about' %}">About</a>
+
+                <a href="{% url 'contact' %}">Contact</a>
+
+            {% else %}
+
+                <a href="{% url 'login' %}">🔒 Login</a>
+
+                <a href="{% url 'home' %}">Home</a>
+
+            {% endif %}
+
+        </div>
+
+
+        <div class="user-menu">
+
+            {% if request.user.is_authenticated %}
+
+                <span class="username">
+                    👤 {{ request.user.username }}
+                </span>
+
+
+                <a href="{% url 'cart' %}" class="nav-cart">
+                    🛒 Cart
+                </a>
+
+
+                <a href="{% url 'wishlist' %}" class="nav-wishlist">
+                    ❤️ Wishlist
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= PRODUCT DETAILS ================= -->
+
+    <section class="product-detail">
+
+
+        <!-- ================= PRODUCT IMAGE ================= -->
+
+        <div class="product-image">
+
+            {% if mobile.image %}
+
+                <img
+                    src="{% static 'images/' %}{{ mobile.image }}"
+                    alt="{{ mobile.name }}"
+                    style="
+                        width:350px;
+                        height:450px;
+                        object-fit:contain;
+                    "
+                >
+
+            {% endif %}
+
+        </div>
+
+
+
+        <!-- ================= PRODUCT INFORMATION ================= -->
+
+        <div class="product-info">
+
+
+            <!-- Brand -->
+
+            <p>
+                {{ mobile.brand.name }}
+            </p>
+
+
+            <!-- Product Name -->
+
+            <h1>
+                {{ mobile.name }}
+            </h1>
+
+
+            <!-- Rating -->
+
+            <p>
+                ⭐⭐⭐⭐⭐
+                <span>4.5/5</span>
+            </p>
+
+
+            <!-- Price -->
+
+            <h2>
+                ₹{{ mobile.price }}
+            </h2>
+
+
+            <!-- Delivery -->
+
+            <p>
+                🚚 Free Delivery
+            </p>
+
+
+            <!-- Stock -->
+
+            <p>
+                ✅ In Stock
+            </p>
+
+
+            <!-- Product Details -->
+
+            <h3>
+                Product Details
+            </h3>
+
+
+            <!-- Product Description -->
+
+            <p>
+                {{ mobile.description }}
+            </p>
+
+
+
+            <!-- ================= BUTTONS ================= -->
+
+            <div class="product-buttons">
+
+
+                <!-- Add To Cart -->
+
+                <a href="{% url 'add_to_cart' mobile.id %}">
+
+                    <button type="button">
+                        🛒 Add to Cart
+                    </button>
+
+                </a>
+
+
+
+                <!-- Buy Now -->
+
+                <a href="{% url 'order_details' mobile.id %}">
+
+                    <button type="button">
+                        ⚡ Buy Now
+                    </button>
+
+                </a>
+
+
+
+                <!-- Wishlist -->
+
+                <a href="{% url 'add_to_wishlist' mobile.id %}">
+
+                    <button type="button">
+                        ❤️ Wishlist
+                    </button>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- ================= RECOMMENDED MOBILES ========== -->
+    <!-- ================================================= -->
+
+    <section class="recommended-section">
+
+
+        <h2>
+            Recommended for You
+        </h2>
+
+
+        <p class="recommended-subtitle">
+            You may also like these mobiles
+        </p>
+
+
+        <div class="recommended-container">
+
+
+            {% for recommended in recommended_mobiles %}
+
+
+                <div class="recommended-card">
+
+
+                    <!-- Recommended Mobile Image -->
+
+                    {% if recommended.image %}
+
+                        <img
+                            src="{% static 'images/' %}{{ recommended.image }}"
+                            alt="{{ recommended.name }}"
+                        >
+
+                    {% endif %}
+
+
+                    <!-- Mobile Name -->
+
+                    <h3>
+                        {{ recommended.name }}
+                    </h3>
+
+
+                    <!-- Brand -->
+
+                    <p class="recommended-brand">
+                        {{ recommended.brand.name }}
+                    </p>
+
+
+                    <!-- Price -->
+
+                    <div class="recommended-price">
+                        ₹{{ recommended.price }}
+                    </div>
+
+
+                    <!-- View Details -->
+
+                    <a
+                        href="{% url 'product_detail' recommended.id %}"
+                        class="recommended-btn"
+                    >
+                        View Details
+                    </a>
+
+
+                </div>
+
+
+            {% empty %}
+
+
+                <p class="no-recommendation">
+                    No recommended mobiles available.
+                </p>
+
+
+            {% endfor %}
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+
+        <div class="footer-content">
+
+
+            <!-- MobileMart -->
+
+            <div>
+
+                <h3>
+                    📱 MobileMart
+                </h3>
+
+                <p>
+                    Your trusted online mobile store.
+                </p>
+
+            </div>
+
+
+
+            <!-- Quick Links -->
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+
+                <p>
+                    <a href="{% url 'home' %}">
+                        Home
+                    </a>
+                </p>
+
+
+                <p>
+                    <a href="{% url 'mobiles' %}">
+                        Mobiles
+                    </a>
+                </p>
+
+
+                <p>
+                    <a href="{% url 'brands' %}">
+                        Brands
+                    </a>
+                </p>
+
+
+                <p>
+                    <a href="{% url 'about' %}">
+                        About
+                    </a>
+                </p>
+
+
+                <p>
+                    <a href="{% url 'contact' %}">
+                        Contact
+                    </a>
+                </p>
+
+            </div>
+
+
+
+            <!-- Contact -->
+
+            <div>
+
+                <h3>
+                    Contact Us
+                </h3>
+
+
+                <p>
+                    📧 mobilemart@gmail.com
+                </p>
+
+
+                <p>
+                    📞 +91 9876543210
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- Copyright -->
+
+        <div class="copyright">
+
+            © 2026 MobileMart. All Rights Reserved.
+
+        </div>
+
+
+    </footer>
+
+
+</body>
+
+</html>

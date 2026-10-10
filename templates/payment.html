@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment - MobileMart</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+
+.payment-page {
+    width: 100%;
+    min-height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.payment-card {
+    width: 700px;
+    background: white;
+    padding: 45px;
+    border-radius: 18px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.payment-card h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.payment-subtitle {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.payment-order {
+    background: #f5f8ff;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.payment-order h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.payment-order h1 {
+    font-size: 32px;
+    margin: 15px 0 25px;
+}
+
+.payment-order button {
+    width: 80%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.payment-order button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(37,99,235,0.4);
+}
+
+</style>
+</head>
+
+<body>
+
+     <nav class="navbar">
+
+    <div class="logo">
+        📱 MobileMart
+    </div>
+
+    <div class="menu">
+
+        {% if request.user.is_authenticated %}
+
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'mobiles' %}">Mobiles</a>
+            <a href="{% url 'brands' %}">Brands</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'contact' %}">Contact</a>
+
+        {% else %}
+
+            <a href="{% url 'login' %}">🔒 Login</a>
+            <a href="{% url 'home' %}">Home</a>
+
+        {% endif %}
+
+    </div>
+
+    <div class="user-menu">
+
+        {% if request.user.is_authenticated %}
+
+            <span class="username">
+                👤 {{ request.user.username }}
+            </span>
+
+            <a href="{% url 'cart' %}" class="nav-cart">
+                🛒 Cart
+            </a>
+
+            <a href="{% url 'wishlist' %}" class="nav-wishlist">
+                ❤️ Wishlist
+            </a>
+
+        {% endif %}
+
+    </div>
+
+</nav>
+
+    <section class="payment-page">
+
+    <div class="payment-card">
+
+        <h1>💳 Payment</h1>
+
+        <p class="payment-subtitle">
+            Complete your payment securely.
+        </p>
+
+        <div class="payment-order">
+
+            <h2>Order Total:</h2>
+
+            <h1>₹{{ grand_total }}</h1>
+
+            <button type="button" id="pay-button">
+                💳 Pay Now
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+
+    var options = {
+
+        "key": "{{ key_id }}",
+
+        "amount": "{{ amount }}",
+
+        "currency": "INR",
+
+        "name": "MobileMart",
+
+        "description": "Mobile Purchase",
+
+        "order_id": "{{ order.id }}",
+
+        "handler": function (response) {
+
+    var form = document.createElement("form");
+
+    form.method = "POST";
+    form.action = "{% url 'verify_payment' %}";
+    
+    var amount = document.createElement("input");
+    amount.type = "hidden";
+    amount.name = "amount";
+    amount.value = "{{ grand_total }}";
+    form.appendChild(amount);
+
+    var csrf = document.createElement("input");
+    csrf.type = "hidden";
+    csrf.name = "csrfmiddlewaretoken";
+    csrf.value = "{{ csrf_token }}";
+    form.appendChild(csrf);
+
+    var orderId = document.createElement("input");
+    orderId.type = "hidden";
+    orderId.name = "razorpay_order_id";
+    orderId.value = response.razorpay_order_id;
+    form.appendChild(orderId);
+
+    var paymentId = document.createElement("input");
+    paymentId.type = "hidden";
+    paymentId.name = "razorpay_payment_id";
+    paymentId.value = response.razorpay_payment_id;
+    form.appendChild(paymentId);
+
+    var signature = document.createElement("input");
+    signature.type = "hidden";
+    signature.name = "razorpay_signature";
+    signature.value = response.razorpay_signature;
+    form.appendChild(signature);
+
+    document.body.appendChild(form);
+
+    form.submit();
+
+},
+
+        "theme": {
+            "color": "#2563eb"
+        }
+
+    };
+
+    var rzp1 = new Razorpay(options);
+
+    document.querySelector("button").onclick = function(e) {
+
+        rzp1.open();
+
+        e.preventDefault();
+
+    };
+
+</script>
+
+
+</body>
+
+</html>

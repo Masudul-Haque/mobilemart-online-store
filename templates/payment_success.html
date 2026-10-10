@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment Successful - MobileMart</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+
+.success-page {
+    width: 100%;
+    min-height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.success-card {
+    width: 700px;
+    background: white;
+    padding: 50px;
+    border-radius: 18px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.success-icon {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.success-card h1 {
+    font-size: 38px;
+    margin: 10px 0;
+    color: #16a34a;
+}
+
+.success-message {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.success-info {
+    background: #f5f8ff;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.success-info h2 {
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.paid {
+    display: inline-block;
+    background: #16a34a;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.success-button {
+    display: inline-block;
+    width: 80%;
+    padding: 15px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 17px;
+    box-sizing: border-box;
+}
+
+.success-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(37,99,235,0.4);
+}
+
+</style>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            📱 MobileMart
+        </div>
+
+        <div class="menu">
+
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'mobiles' %}">Mobiles</a>
+            <a href="{% url 'brands' %}">Brands</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'contact' %}">Contact</a>
+
+        </div>
+
+        <a href="{% url 'cart' %}" class="cart">
+            🛒 Cart
+        </a>
+
+    </nav>
+
+
+    <section class="success-page">
+
+    <div class="success-card">
+
+        <div class="success-icon">
+            ✅
+        </div>
+
+        <h1>
+            Payment Successful!
+        </h1>
+
+        <p class="success-message">
+            Your payment has been processed successfully.<br>
+            Thank you for shopping with MobileMart!
+        </p>
+
+        <div class="success-info">
+
+            <h2>
+                💳 Payment Completed
+            </h2>
+
+            <p>
+                Your order has been placed successfully.
+            </p>
+
+            <span class="paid">
+                ✓ Paid
+            </span>
+
+        </div>
+
+        <a href="{% url 'mobiles' %}" class="success-button">
+            🛍️ Continue Shopping
+        </a>
+
+    </div>
+
+</section>
+
+
+</body>
+
+</html>

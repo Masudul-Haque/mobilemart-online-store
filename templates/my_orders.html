@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders - MobileMart</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            📱 MobileMart
+        </div>
+
+        <div class="menu">
+
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'mobiles' %}">Mobiles</a>
+            <a href="{% url 'brands' %}">Brands</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'contact' %}">Contact</a>
+
+        </div>
+
+        <a href="{% url 'cart' %}" class="cart">
+            🛒 Cart
+        </a>
+
+    </nav>
+
+
+    <section class="brand-page">
+
+        <h1>📦 My Orders</h1>
+
+        <p>Your order history</p>
+
+
+        {% for order in orders %}
+
+        <div class="brand-box">
+
+            <h2>
+                Order #{{ order.id }}
+            </h2>
+
+            <p>
+                💰 Amount: ₹{{ order.amount }}
+            </p>
+
+            <p>
+                💳 Payment ID:
+                {{ order.razorpay_payment_id }}
+            </p>
+
+            <p>
+                📌 Status:
+                {{ order.status }}
+            </p>
+
+            <p>
+                📅 Date:
+                {{ order.created_at|date:"d M Y, h:i A" }}
+            </p>
+
+            <h3>📱 Products:</h3>
+
+{% for item in order.orderitem_set.all %}
+
+<p>
+    📱 {{ item.mobile.name }}
+    × {{ item.quantity }}
+    — ₹{{ item.price }}
+</p>
+
+{% endfor %}
+
+        </div>
+
+        {% empty %}
+
+        <h2>
+            No orders yet 📦
+        </h2>
+
+        <p>
+            Your completed orders will appear here.
+        </p>
+
+        <a href="{% url 'mobiles' %}">
+            <button type="button">
+                🛍️ Start Shopping
+            </button>
+        </a>
+
+        {% endfor %}
+
+    </section>
+
+
+</body>
+
+</html>

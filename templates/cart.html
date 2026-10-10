@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Cart - MobileMart</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+.cart-page {
+    width: 90% !important;
+    max-width: 1200px !important;
+    margin: 50px auto !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+.cart-page > h1 {
+    text-align: center !important;
+    font-size: 40px !important;
+    margin-bottom: 10px !important;
+}
+
+.cart-subtitle {
+    text-align: center !important;
+    font-size: 18px !important;
+    color: #666 !important;
+    margin-bottom: 35px !important;
+}
+
+.cart-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 30px !important;
+    width: 100% !important;
+}
+
+.cart-products {
+    width: 700px !important;
+}
+
+.cart-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 35px !important;
+    width: 100% !important;
+    background: white !important;
+    padding: 30px !important;
+    margin-bottom: 25px !important;
+    border-radius: 15px !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15) !important;
+    box-sizing: border-box !important;
+}
+
+.cart-item img {
+    width: 220px !important;
+    height: 250px !important;
+    object-fit: contain !important;
+}
+
+.cart-item-info {
+    flex: 1 !important;
+    text-align: left !important;
+}
+
+.cart-item-info h2 {
+    font-size: 26px !important;
+}
+
+.cart-item-info h3 {
+    font-size: 23px !important;
+}
+
+.quantity-box {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    margin: 20px 0 !important;
+}
+
+.quantity-box button {
+    padding: 10px 16px !important;
+    border: none !important;
+    border-radius: 7px !important;
+    background: #2563eb !important;
+    color: white !important;
+    cursor: pointer !important;
+}
+
+.quantity-box span {
+    font-size: 20px !important;
+    font-weight: bold !important;
+}
+
+.remove-btn {
+    padding: 10px 18px !important;
+    border: none !important;
+    border-radius: 7px !important;
+    background: #dc2626 !important;
+    color: white !important;
+    cursor: pointer !important;
+}
+
+.cart-summary {
+    width: 320px !important;
+    background: white !important;
+    padding: 30px !important;
+    border-radius: 15px !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15) !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+.cart-summary h2 {
+    font-size: 24px !important;
+}
+
+.cart-summary h3 {
+    font-size: 28px !important;
+}
+
+.cart-summary button {
+    width: 100% !important;
+    padding: 14px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    background: #2563eb !important;
+    color: white !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+}
+
+.empty-cart {
+    max-width: 600px !important;
+    margin: 50px auto !important;
+    padding: 50px !important;
+    background: white !important;
+    border-radius: 15px !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15) !important;
+    text-align: center !important;
+}
+</style>
+    
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+    <div class="logo">
+        📱 MobileMart
+    </div>
+
+    <div class="menu">
+
+        {% if request.user.is_authenticated %}
+
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'mobiles' %}">Mobiles</a>
+            <a href="{% url 'brands' %}">Brands</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'contact' %}">Contact</a>
+
+        {% else %}
+
+            <a href="{% url 'login' %}">🔒 Login</a>
+            <a href="{% url 'home' %}">Home</a>
+
+        {% endif %}
+
+    </div>
+
+    <div class="user-menu">
+
+        {% if request.user.is_authenticated %}
+
+            <span class="username">
+                👤 {{ request.user.username }}
+            </span>
+
+            <a href="{% url 'cart' %}" class="nav-cart">
+                🛒 Cart
+            </a>
+
+            <a href="{% url 'wishlist' %}" class="nav-wishlist">
+                ❤️ Wishlist
+            </a>
+
+        {% endif %}
+
+    </div>
+
+</nav>
+
+
+    <!-- Cart Section -->
+
+    <section class="cart-page">
+
+        <h1>🛒 My Cart</h1>
+
+        <p class="cart-subtitle">
+            Your selected products
+        </p>
+
+
+        {% if cart_items %}
+
+        <div class="cart-container">
+
+            <!-- Cart Products -->
+
+            <div class="cart-products">
+
+                {% for item in cart_items %}
+
+                <div class="cart-item">
+
+                    {% if item.mobile.image %}
+
+                    <img
+                        src="{% static 'images/' %}{{ item.mobile.image }}"
+                        alt="{{ item.mobile.name }}"
+                    >
+
+                    {% endif %}
+
+                    <div class="cart-item-info">
+
+                        <h2>
+                            {{ item.mobile.name }}
+                        </h2>
+
+                        <p>
+                            Brand: {{ item.mobile.brand.name }}
+                        </p>
+
+                        <h3>
+                            ₹{{ item.mobile.price }}
+                        </h3>
+
+
+                        <!-- Quantity -->
+
+                        <div class="quantity-box">
+
+                            <a href="{% url 'decrease_quantity' item.id %}">
+                                <button type="button">➖</button>
+                            </a>
+
+                            <span>
+                                {{ item.quantity }}
+                            </span>
+
+                            <a href="{% url 'increase_quantity' item.id %}">
+                                <button type="button">➕</button>
+                            </a>
+
+                        </div>
+
+
+                        <!-- Remove -->
+
+                        <a href="{% url 'remove_from_cart' item.id %}">
+                            <button type="button" class="remove-btn">
+                                🗑️ Remove
+                            </button>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+
+            <!-- Order Summary -->
+
+            <div class="cart-summary">
+
+                <h2>🧾 Order Summary</h2>
+
+                <hr>
+
+                <p>
+                    Selected Items
+                </p>
+
+                <h2>
+                    Grand Total
+                </h2>
+
+                <h3>
+                    ₹{{ grand_total }}
+                </h3>
+
+                <a href="{% url 'checkout_details' %}">
+                    <button type="button">
+                        💳 Proceed to Checkout
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        {% else %}
+
+        <!-- Empty Cart -->
+
+        <div class="empty-cart">
+
+            <h2>
+                Your cart is empty 🛒
+            </h2>
+
+            <p>
+                Add some mobiles to your cart.
+            </p>
+
+            <a href="{% url 'mobiles' %}">
+                <button type="button">
+                    🛍️ Continue Shopping
+                </button>
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h3>📱 MobileMart</h3>
+                <p>Your trusted online mobile store.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+
+                <p>
+                    <a href="{% url 'home' %}">Home</a>
+                </p>
+
+                <p>
+                    <a href="{% url 'mobiles' %}">Mobiles</a>
+                </p>
+
+                <p>
+                    <a href="{% url 'brands' %}">Brands</a>
+                </p>
+
+            </div>
+
+            <div>
+                <h3>Contact Us</h3>
+
+                <p>📧 mobilemart@gmail.com</p>
+                <p>📞 +91 9876543210</p>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © 2026 MobileMart. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

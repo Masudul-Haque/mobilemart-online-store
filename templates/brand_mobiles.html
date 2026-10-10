@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>{{ brand.name }} Mobiles - MobileMart</title>
+
+</head>
+
+
+<body>
+
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            📱 MobileMart
+        </div>
+
+
+        <div class="menu">
+
+            <a href="{% url 'home' %}">Home</a>
+
+            <a href="{% url 'mobiles' %}">Mobiles</a>
+
+            <a href="{% url 'brands' %}">Brands</a>
+
+            <a href="{% url 'about' %}">About</a>
+
+            <a href="{% url 'contact' %}">Contact</a>
+
+        </div>
+
+ <div class="user-menu">
+
+
+        <a href="{% url 'cart' %}" class="nav-cart">
+            🛒 Cart
+        </a>
+
+
+        <a href="{% url 'wishlist' %}" class="nav-wishlist">
+            ❤️ Wishlist
+        </a>
+
+    </div>
+
+    </nav>
+
+
+
+    <!-- Brand Mobiles Section -->
+
+    <section class="brand-page">
+
+        <h1>{{ brand.name }} Mobiles</h1>
+
+        <p>
+            Available smartphones from {{ brand.name }}
+        </p>
+
+
+
+        <div class="brand-grid">
+
+
+            {% for mobile in mobiles %}
+
+
+            <div class="brand-box">
+
+
+                <!-- Mobile Image -->
+
+                {% if mobile.image %}
+    <img src="{% static 'images/' %}{{ mobile.image }}"
+         alt="{{ mobile.name }}"
+         style="width: 150px; height: 180px; object-fit: contain; display: block; margin: 0 auto 15px;">
+{% endif %}
+
+
+
+                <!-- Mobile Name -->
+
+                <h2>
+                    {{ mobile.name }}
+                </h2>
+
+
+
+                <!-- Mobile Price -->
+
+                <h3>
+                    ₹{{ mobile.price }}
+                </h3>
+
+
+
+                <!-- Mobile Description -->
+
+                <p>
+                    {{ mobile.description }}
+                </p>
+
+
+
+                <!-- View Details Button -->
+
+                <a href="{% url 'product_detail' mobile.id %}">
+    <button type="button">View Details</button>
+</a>
+
+
+            </div>
+
+
+            {% empty %}
+
+
+            <p>
+                No mobiles available for this brand.
+            </p>
+
+
+            {% endfor %}
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Footer -->
+
+    <footer>
+
+
+        <div class="footer-content">
+
+
+            <!-- Store Information -->
+
+            <div>
+
+                <h3>
+                    📱 MobileMart
+                </h3>
+
+                <p>
+                    Your trusted online mobile store.
+                </p>
+
+            </div>
+
+
+
+            <!-- Quick Links -->
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+
+                <p>
+                    <a href="{% url 'home' %}">
+                        Home
+                    </a>
+                </p>
+
+
+                <p>
+                    <a href="{% url 'mobiles' %}">
+                        Mobiles
+                    </a>
+                </p>
+
+
+                <p>
+                    <a href="{% url 'brands' %}">
+                        Brands
+                    </a>
+                </p>
+
+
+                <p>
+                    <a href="{% url 'about' %}">
+                        About
+                    </a>
+                </p>
+
+
+                <p>
+                    <a href="{% url 'contact' %}">
+                        Contact
+                    </a>
+                </p>
+
+            </div>
+
+
+
+            <!-- Contact -->
+
+            <div>
+
+                <h3>
+                    Contact Us
+                </h3>
+
+
+                <p>
+                    📧 mobilemart@gmail.com
+                </p>
+
+
+                <p>
+                    📞 +91 9876543210
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- Copyright -->
+
+        <div class="copyright">
+
+            © 2026 MobileMart. All Rights Reserved.
+
+        </div>
+
+
+    </footer>
+
+
+</body>
+
+</html>

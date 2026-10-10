@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Wishlist - MobileMart</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    <style>
+
+        /* ===== Wishlist Page ===== */
+
+        .wishlist-page {
+            width: 100%;
+            min-height: 600px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 50px 20px;
+
+            box-sizing: border-box;
+        }
+
+
+        .wishlist-page > h1 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 8px;
+        }
+
+
+        .wishlist-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+
+        /* Wishlist Product Card */
+
+        .wishlist-box {
+
+            width: 700px;
+            max-width: 95%;
+
+            background: white;
+
+            padding: 35px;
+
+            margin-bottom: 25px;
+
+            border-radius: 18px;
+
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+
+            text-align: center;
+
+            box-sizing: border-box;
+        }
+
+
+        .wishlist-box img {
+
+            width: 220px !important;
+            height: 260px !important;
+
+            object-fit: contain;
+
+            margin-bottom: 15px;
+        }
+
+
+        .wishlist-box h2 {
+
+            font-size: 28px;
+
+            margin: 10px 0;
+        }
+
+
+        .wishlist-box p {
+
+            color: #555;
+
+            font-size: 17px;
+
+            margin: 8px 0;
+        }
+
+
+        .wishlist-box h3 {
+
+            font-size: 27px;
+
+            margin: 18px 0;
+        }
+
+
+        /* Buttons */
+
+        .wishlist-box button {
+
+            padding: 12px 20px;
+
+            margin: 8px 5px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #2563eb;
+
+            color: white;
+
+            font-size: 15px;
+
+            cursor: pointer;
+        }
+
+
+        .wishlist-box button:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 0 15px rgba(37,99,235,0.4);
+        }
+
+
+        /* Empty Wishlist */
+
+        .wishlist-empty {
+
+            width: 600px;
+            max-width: 90%;
+
+            background: white;
+
+            padding: 50px;
+
+            border-radius: 18px;
+
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+
+            text-align: center;
+
+            box-sizing: border-box;
+        }
+
+
+        .wishlist-empty h2 {
+
+            font-size: 28px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .wishlist-empty p {
+
+            color: #666;
+
+            font-size: 17px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .wishlist-empty button {
+
+            padding: 13px 25px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #2563eb;
+
+            color: white;
+
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+
+        .wishlist-empty button:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 0 15px rgba(37,99,235,0.4);
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Navbar -->
+
+     <nav class="navbar">
+
+    <div class="logo">
+        📱 MobileMart
+    </div>
+
+    <div class="menu">
+
+        {% if request.user.is_authenticated %}
+
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'mobiles' %}">Mobiles</a>
+            <a href="{% url 'brands' %}">Brands</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'contact' %}">Contact</a>
+
+        {% else %}
+
+            <a href="{% url 'login' %}">🔒 Login</a>
+            <a href="{% url 'home' %}">Home</a>
+
+        {% endif %}
+
+    </div>
+
+    <div class="user-menu">
+
+        {% if request.user.is_authenticated %}
+
+            <span class="username">
+                👤 {{ request.user.username }}
+            </span>
+
+            <a href="{% url 'cart' %}" class="nav-cart">
+                🛒 Cart
+            </a>
+
+            <a href="{% url 'wishlist' %}" class="nav-wishlist">
+                ❤️ Wishlist
+            </a>
+
+        {% endif %}
+
+    </div>
+
+</nav>
+
+
+
+    <!-- Wishlist Section -->
+
+    <section class="wishlist-page">
+
+
+        <h1>
+            ❤️ My Wishlist
+        </h1>
+
+
+        <p class="wishlist-subtitle">
+            Your saved products
+        </p>
+
+
+
+        {% for item in wishlist_items %}
+
+
+        <div class="wishlist-box">
+
+
+            {% if item.mobile.image %}
+
+            <img
+                src="{% static 'images/' %}{{ item.mobile.image }}"
+                alt="{{ item.mobile.name }}"
+            >
+
+            {% endif %}
+
+
+            <h2>
+                {{ item.mobile.name }}
+            </h2>
+
+
+            <p>
+                Brand: {{ item.mobile.brand.name }}
+            </p>
+
+
+            <h3>
+                ₹{{ item.mobile.price }}
+            </h3>
+
+
+            <a href="{% url 'product_detail' item.mobile.id %}">
+
+                <button type="button">
+                    View Details
+                </button>
+
+            </a>
+
+
+            <a href="{% url 'remove_from_wishlist' item.id %}">
+
+                <button type="button">
+                    ❌ Remove from Wishlist
+                </button>
+
+            </a>
+
+
+        </div>
+
+
+        {% empty %}
+
+
+        <div class="wishlist-empty">
+
+
+            <h2>
+                Your wishlist is empty ❤️
+            </h2>
+
+
+            <p>
+                Add some mobiles to your wishlist.
+            </p>
+
+
+            <a href="{% url 'mobiles' %}">
+
+                <button type="button">
+                    Browse Mobiles
+                </button>
+
+            </a>
+
+
+        </div>
+
+
+        {% endfor %}
+
+
+    </section>
+
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-content">
+
+
+            <div>
+
+                <h3>📱 MobileMart</h3>
+
+                <p>
+                    Your trusted online mobile store.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <p>
+                    <a href="{% url 'home' %}">Home</a>
+                </p>
+
+                <p>
+                    <a href="{% url 'mobiles' %}">Mobiles</a>
+                </p>
+
+                <p>
+                    <a href="{% url 'brands' %}">Brands</a>
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contact Us</h3>
+
+                <p>
+                    📧 mobilemart@gmail.com
+                </p>
+
+                <p>
+                    📞 +91 9876543210
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 MobileMart. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

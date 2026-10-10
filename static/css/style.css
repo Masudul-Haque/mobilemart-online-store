@@ -1,0 +1,953 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+    height: 70px;
+    width: 100%;
+    background-color: #111827;
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: 80px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.menu a:hover {
+    color: #38bdf8;
+}
+
+
+/* User + Cart + Wishlist */
+
+.user-menu {
+    margin-left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 20px !important;
+    white-space: nowrap;
+}
+
+.username {
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    white-space: nowrap;
+}
+
+.nav-cart,
+.nav-wishlist {
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 19px !important;
+    white-space: nowrap;
+}
+
+.nav-cart:hover,
+.nav-wishlist:hover {
+    color: #38bdf8 !important;
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   HERO SECTION
+   ========================= */
+
+.hero {
+    height: 450px;
+    background: linear-gradient(
+        to right,
+        #dbeafe,
+        #f8fafc
+    );
+
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: #111827;
+}
+
+.hero-text p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.hero-text button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    font-size: 17px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.hero-text button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* =========================
+   HERO IMAGE
+   ========================= */
+
+.hero-image {
+    margin-left: auto;
+    margin-right: 100px;
+}
+
+.hero-image img {
+    width: 400px;
+    height: 420px;
+    object-fit: contain;
+    transition: 0.4s;
+}
+
+.hero-image img:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   POPULAR BRANDS
+   ========================= */
+
+.brands {
+    padding: 50px 80px;
+    text-align: center;
+    background-color: white;
+}
+
+.brands h2,
+.products h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #111827;
+}
+
+.brand-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    background-color: #f1f5f9;
+    padding: 18px 35px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.brand:hover {
+    background-color: #2563eb;
+    color: white;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.6);
+    transform: translateY(-5px);
+}
+
+
+/* =========================
+   FEATURED MOBILES
+   ========================= */
+
+.products {
+    padding: 50px 70px;
+    text-align: center;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    width: 240px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.phone-image {
+    width: 150px;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.product-card p {
+    color: #f59e0b;
+}
+
+.product-card h4 {
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.product-card button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    background-color: #111827;
+    color: white;
+    padding: 40px 70px 20px;
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.footer-content h3 {
+    margin-bottom: 15px;
+}
+
+.footer-content p {
+    color: #d1d5db;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #374151;
+    margin-top: 30px;
+    padding-top: 20px;
+    color: #9ca3af;
+}
+
+
+/* =========================
+   MOBILES PAGE
+   ========================= */
+
+.mobile-page {
+    padding: 50px 70px;
+    text-align: center;
+}
+
+.mobile-page h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.mobile-page > p {
+    color: #666;
+    font-size: 18px;
+}
+
+
+/* =========================
+   SEARCH BOX
+   ========================= */
+
+.search-box {
+    margin: 30px auto 45px;
+}
+
+.search-box input {
+    width: 350px;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 13px 22px;
+    margin-left: 5px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+
+
+/* =========================
+   MOBILE PRODUCT CARDS
+   ========================= */
+
+.mobile-page .product-list {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   BRANDS PAGE
+   ========================= */
+
+.brand-page {
+    padding: 50px 70px;
+    text-align: center;
+    min-height: 550px;
+}
+
+.brand-page h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.brand-page > p {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.brand-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.brand-box {
+    width: 280px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.brand-box h2 {
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+.brand-box p {
+    color: #555;
+}
+
+.brand-box button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.brand-box button:hover {
+    background-color: #1d4ed8;
+}
+
+.brand-logo {
+    width: 150px !important;
+    height: 180px !important;
+    object-fit: contain !important;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+
+/* =========================
+   ABOUT PAGE
+   ========================= */
+
+.about-page {
+    padding: 50px 70px;
+    text-align: center;
+    min-height: 600px;
+}
+
+.about-page h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.about-intro {
+    font-size: 19px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.about-box {
+    width: 300px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+.about-box h2 {
+    color: #111827;
+}
+
+.about-box p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.about-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+}
+
+
+/* =========================
+   SERVICES
+   ========================= */
+
+.service-title {
+    margin-top: 55px;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service-box {
+    width: 220px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+    transition: 0.3s;
+}
+
+.service-box h3 {
+    color: #111827;
+}
+
+.service-box p {
+    color: #666;
+}
+
+.service-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+}
+
+
+/* =========================
+   CONTACT PAGE
+   ========================= */
+
+.contact-page {
+    padding: 50px 70px;
+    min-height: 650px;
+    text-align: center;
+}
+
+.contact-page h1 {
+    font-size: 38px;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.contact-intro {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: auto;
+    text-align: left;
+}
+
+.contact-info {
+    width: 400px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+.contact-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+}
+
+.contact-info h2 {
+    color: #111827;
+    margin-bottom: 25px;
+}
+
+.contact-info p {
+    color: #555;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+
+/* Contact Form */
+
+.contact-form {
+    width: 500px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+.contact-form:hover {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+}
+
+.contact-form h2 {
+    color: #111827;
+    margin-bottom: 25px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 7px;
+    font-weight: bold;
+    color: #374151;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+}
+
+.contact-form button {
+    padding: 13px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   LOGIN PAGE
+   ========================= */
+
+.login-page {
+    min-height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background: #f5f5f5;
+}
+
+.login-box {
+    width: 420px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+.login-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.45);
+}
+
+.login-box h1 {
+    text-align: center;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.login-box > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box label {
+    font-weight: bold;
+    color: #374151;
+    margin-bottom: 7px;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+    padding: 13px;
+    margin-bottom: 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.login-box input[type="email"]:focus,
+.login-box input[type="password"]:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 7px rgba(37, 99, 235, 0.3);
+}
+
+
+/* Login Options */
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.login-options label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.login-options a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.login-options a:hover {
+    text-decoration: underline;
+}
+
+
+/* Login Button */
+
+.login-box button {
+    padding: 13px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-box button:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+
+/* Create Account */
+
+.signup-text {
+    text-align: center;
+    margin-top: 25px;
+    color: #666;
+}
+
+.signup-text a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   SUCCESS MESSAGE
+   ========================= */
+
+.success-message {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* =========================
+   PRODUCT DETAILS
+   ========================= */
+
+.product-detail {
+    display: flex;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-info {
+    width: 55%;
+}
+
+.product-info h1 {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.product-info h2 {
+    font-size: 28px;
+    margin: 20px 0;
+}
+
+.product-info h3 {
+    margin-top: 25px;
+}
+
+.product-info p {
+    line-height: 1.7;
+}
+
+.product-buttons {
+    margin-top: 30px;
+}
+
+.product-buttons button {
+    padding: 12px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    background: #2563eb;
+    color: white;
+}
+
+.product-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+}
+
+
+/* =========================
+   CART PAGE
+   ========================= */
+
+.cart-page {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.cart-page h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.cart-subtitle {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #666;
+}
+
+.cart-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.cart-item {
+    width: 650px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.cart-item img {
+    width: 220px;
+    height: 250px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.cart-item h2 {
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+.cart-item p {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.quantity-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.quantity-box button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.quantity-box span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cart-summary {
+    width: 320px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.cart-summary h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.cart-summary h3 {
+    font-size: 22px;
+    margin: 20px 0;
+}
+
+.cart-summary button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cart-summary button:hover,
+.quantity-box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+}
+
