@@ -1,7 +1,6 @@
 import razorpay
 from django.db.models import Q
 from decimal import Decimal
-from django.views.decorators.http import require_post
 from django.conf import settings
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
