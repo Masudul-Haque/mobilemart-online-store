@@ -178,12 +178,6 @@
 
     form.method = "POST";
     form.action = "{% url 'verify_payment' %}";
-    
-    var amount = document.createElement("input");
-    amount.type = "hidden";
-    amount.name = "amount";
-    amount.value = "{{ grand_total }}";
-    form.appendChild(amount);
 
     var csrf = document.createElement("input");
     csrf.type = "hidden";

@@ -1,0 +1,1567 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-09-13T06:20:26.722Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Apple",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-09-13T06:21:12.935Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Samsung",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-09-13T06:21:48.790Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Oneplus",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-09-13T06:22:30.127Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Vivo",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-09-13T06:23:16.999Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "Xiaomi",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-09-13T06:24:02.871Z",
+    "user": 2,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "Realme",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-09-13T06:30:39.585Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "iPhone 15",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-09-13T06:34:06.850Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Samsung Galaxy S24",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2026-09-13T06:35:26.939Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Oneplus 13",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2026-09-13T06:37:03.856Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Vivo  V70",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2026-09-13T06:38:15.019Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Xiaomi 15",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2026-09-13T06:40:04.133Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "6",
+    "object_repr": "Realme GT 7",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2026-09-13T07:14:47.266Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "7",
+    "object_repr": "iPhone  16",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2026-09-13T07:16:15.842Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "8",
+    "object_repr": "iPhone  16 pro",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2026-09-13T07:17:47.003Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "9",
+    "object_repr": "iPhone  17",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2026-09-13T07:19:28.340Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "10",
+    "object_repr": "iPhone  17 pro",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2026-09-13T07:22:08.543Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "11",
+    "object_repr": "Samsung galaxy  S25",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2026-09-13T07:23:53.399Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "12",
+    "object_repr": "Samsung galaxy  S24 Ultra",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2026-09-13T07:25:14.324Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "13",
+    "object_repr": "Samsung galaxy  S25 Ultra",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2026-09-13T07:26:34.886Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "14",
+    "object_repr": "Samsung galaxy  A56 5G",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2026-09-13T07:42:21.013Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "iPhone 15",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2026-09-13T15:23:45.960Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Samsung Galaxy S24",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2026-09-13T15:43:10.667Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "7",
+    "object_repr": "iPhone  16",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2026-09-13T15:43:32.925Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "8",
+    "object_repr": "iPhone  16 pro",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2026-09-13T15:50:43.737Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "9",
+    "object_repr": "iPhone  17",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2026-09-13T15:50:57.269Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "8",
+    "object_repr": "iPhone  16 pro",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2026-09-13T15:52:13.713Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "10",
+    "object_repr": "iPhone  17 pro",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2026-09-14T06:28:05.798Z",
+    "user": 2,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "Masudul Haque - masudul370@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2026-09-14T06:57:25.264Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "admin - iPhone 15",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2026-09-14T09:02:53.504Z",
+    "user": 2,
+    "content_type": 12,
+    "object_id": "3",
+    "object_repr": "admin - pay_TbrNoJNu5IdY5P",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2026-09-14T16:41:41.519Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "14",
+    "object_repr": "Samsung galaxy  A56 5G",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2026-09-14T16:43:38.810Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "13",
+    "object_repr": "Samsung galaxy  S25 Ultra",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2026-09-14T16:50:05.925Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "12",
+    "object_repr": "Samsung galaxy  S24 Ultra",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2026-09-14T16:50:11.715Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "13",
+    "object_repr": "Samsung galaxy  S25 Ultra",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2026-09-14T16:51:29.697Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "14",
+    "object_repr": "Samsung galaxy  A56 5G",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2026-09-14T16:51:38.140Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Samsung Galaxy S24",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2026-09-14T16:55:19.940Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "11",
+    "object_repr": "Samsung galaxy  S25",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2026-09-15T03:39:10.082Z",
+    "user": 2,
+    "content_type": 12,
+    "object_id": "5",
+    "object_repr": "admin - pay_Tc9ja2YtM7KHQF",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2026-09-15T03:39:17.165Z",
+    "user": 2,
+    "content_type": 12,
+    "object_id": "4",
+    "object_repr": "admin - pay_Tc8yVp8y2MZPgH",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2026-09-15T03:39:25.112Z",
+    "user": 2,
+    "content_type": 12,
+    "object_id": "2",
+    "object_repr": "admin - pay_TbrJosmllfDqLX",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2026-09-15T03:39:31.324Z",
+    "user": 2,
+    "content_type": 12,
+    "object_id": "1",
+    "object_repr": "admin - pay_Tbqwvgml8nvaDn",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2026-09-15T04:15:35.605Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Oneplus 13",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2026-09-15T04:16:10.790Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Vivo  V70",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2026-09-15T04:19:40.254Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Xiaomi 15",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2026-09-15T04:21:50.943Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "6",
+    "object_repr": "Realme GT 7",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2026-10-01T14:45:46.030Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "15",
+    "object_repr": "one plus 12",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2026-10-01T14:50:58.653Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "16",
+    "object_repr": "one plus norde 5",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2026-10-01T14:54:10.519Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "17",
+    "object_repr": "one plus norde ce6",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2026-10-01T14:57:03.485Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "18",
+    "object_repr": "oneplus norde 6",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2026-10-01T15:13:49.830Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "19",
+    "object_repr": "one plus 13s 5G",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2026-10-05T16:31:24.937Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "20",
+    "object_repr": "vivo v60",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2026-10-05T16:32:09.407Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "21",
+    "object_repr": "vivo v50",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2026-10-05T16:32:57.221Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "22",
+    "object_repr": "vivo v40",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2026-10-05T16:34:34.949Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "23",
+    "object_repr": "vivo v30",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2026-10-05T16:35:25.572Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "24",
+    "object_repr": "vivo x200",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2026-10-05T16:36:34.687Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "22",
+    "object_repr": "vivo v40",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2026-10-05T16:47:11.895Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "25",
+    "object_repr": "realme GT5",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2026-10-05T16:48:10.438Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "26",
+    "object_repr": "realme 14pro+",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2026-10-05T16:49:11.233Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "27",
+    "object_repr": "realme 13pro+",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 60,
+  "fields": {
+    "action_time": "2026-10-05T16:50:16.676Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "28",
+    "object_repr": "realme p3 pro",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 61,
+  "fields": {
+    "action_time": "2026-10-05T16:52:14.896Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "29",
+    "object_repr": "realme gt6",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 62,
+  "fields": {
+    "action_time": "2026-10-05T16:53:12.168Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "27",
+    "object_repr": "realme 13pro+",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 63,
+  "fields": {
+    "action_time": "2026-10-05T16:53:22.894Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "26",
+    "object_repr": "realme 14pro+",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2026-10-05T16:53:33.759Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "25",
+    "object_repr": "realme GT5",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$38d9o427qNmt3sruXqWjh7$zxAw/TmqQTxBtRp4vWoSskuT9cmckZZZKTeTs5JC07o=",
+    "last_login": "2026-10-05T14:35:21.421Z",
+    "is_superuser": false,
+    "username": "masudul ",
+    "first_name": "",
+    "last_name": "",
+    "email": "masudul370@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-09-12T15:31:59.293Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$HBwdNHSIyWJOxa8hTt7LqB$TNJ1gwJzMC+l21KA+vsZTxpxVec2E91inp935X3G2NE=",
+    "last_login": "2026-10-05T14:35:48.439Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "masudul370@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-09-13T06:10:04.948Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$CrsQuF4BZN1vXZ1Go5U7a3$+qkwF5OgV3MsHzLCuLJgaRAklAQQnKvZU0ywYfPcKSw=",
+    "last_login": "2026-09-17T16:06:14.265Z",
+    "is_superuser": false,
+    "username": "mobile store",
+    "first_name": "",
+    "last_name": "",
+    "email": "hmasudul999@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-09-17T16:03:01.787Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "2941p4z6ui3bw5o8l93lt4ry4pk0wy6g",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQRO_iGlmsv4SSPmew1l4vDiBbipMKcXcSKQVMOe_NvEXAdSlh7XkOE4mrAHH67SKmZ647oAfWe5Op1WWeotwVedAux0b5dTvcv4OCvWxr5zUTJt7iHTM4NcCQM5CPMWkbjdakEAAuDHzOSmnDxGwtWjBkSHy-DwY4vw:1xBD1U:boIdsN5aP5FHdqdtwzbBJsndXJkI6xjwd6VDh7nbUEc",
+    "expire_date": "2026-10-12T15:12:08.598Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "2e6qtj9bxq58em3qfnld7bhmpyletvgf",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSG8BZfu-w1kYAapGkhKuzL-uzbpQrf3nHNfLMK21rgNWuKM7MIUO_1uCfKD2g7wDu3Wee5tXebEd4UfdPCpIz2vh_t3UGHUb50FOqdc0aJok7J1GpUNHoOSBAVzEEknKfMZyAD6VAIZiap4sggFkL0_8ck5HQ:1xDjnA:XvdC37Uy1y6pRFM_za-H5sEROLyKWd5CSRwNDRzMyGw",
+    "expire_date": "2026-10-19T14:35:48.445Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "3m0px1i7q60ypkootxon3wsnlkuyavxc",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQRO_iGlmsv4SSPmew1l4vDiBbipMKcXcSKQVMOe_NvEXAdSlh7XkOE4mrAHH67SKmZ647oAfWe5Op1WWeotwVedAux0b5dTvcv4OCvWxr5zUTJt7iHTM4NcCQM5CPMWkbjdakEAAuDHzOSmnDxGwtWjBkSHy-DwY4vw:1xCgNY:_2tavjvAwG40c2ug6XBxHUMKNd5OQwrTKTKsfeRagdQ",
+    "expire_date": "2026-10-16T16:45:00.445Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "b8yskvcu5e5jttfzuhmoia2v2s70xr27",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSG8BZfu-w1kYAapGkhKuzL-uzbpQrf3nHNfLMK21rgNWuKM7MIUO_1uCfKD2g7wDu3Wee5tXebEd4UfdPCpIz2vh_t3UGHUb50FOqdc0aJok7J1GpUNHoOSBAVzEEknKfMZyAD6VAIZiap4sggFkL0_8ck5HQ:1xCHuS:64k_Uv4jnEqz_IIGq2Xs-ZfSUg-KiNC2_Bv5qJ-Vg_g",
+    "expire_date": "2026-10-15T14:37:20.854Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "bnzzjfocrgdf21wv8dq65w5fvy2tf2f3",
+  "fields": {
+    "session_data": ".eJxVkEFqwzAQRa9itA7Gkm3ZzjKrQkkXXQfESCPZShUplSxKCLl75ZJCu5w373-YuRMBeV1ETjoKi2RPGNn9ZRLUh_bbAs_g51Cr4NdoZb0p9XOb6mNA7Q5P91_BAmkpadUg54ybtjFtJ1XPW2T9NOLEqAaDampkKylVA-gOcJRm0h1FZkbdIxjYSkPE0od6BesS2d-Jyc4JDxdd-o-QMmZXvcBn1kW-LsFvnLNpGNlEOS0QEKNOJUsOYc4OqvcAeIon_xptWjzMEKs3QAvFVXa9FfF3vFqvyo2FDB2lDSWPHZH5Jnz4EpcgrdM_72OPbx0hb3Y:1x9NoC:HChH1LULe4RMkarMYKZdEcu7U--AOUI8ujvGRSwM5Ro",
+    "expire_date": "2026-10-07T14:18:52.827Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "f3cec6pz5x6uoel3x3fg6jr8wre3k93q",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQRO_iGlmsv4SSPmew1l4vDiBbipMKcXcSKQVMOe_NvEXAdSlh7XkOE4mrAHH67SKmZ647oAfWe5Op1WWeotwVedAux0b5dTvcv4OCvWxr5zUTJt7iHTM4NcCQM5CPMWkbjdakEAAuDHzOSmnDxGwtWjBkSHy-DwY4vw:1xCg1w:UxBCCP6nDLcaAagMpKcjACalrw8QM1Y7r3YQCkObxo8",
+    "expire_date": "2026-10-16T16:22:40.741Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "hz7sc0zb9qwxfg16prowqa30tyh0ubl2",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQRO_iGlmsv4SSPmew1l4vDiBbipMKcXcSKQVMOe_NvEXAdSlh7XkOE4mrAHH67SKmZ647oAfWe5Op1WWeotwVedAux0b5dTvcv4OCvWxr5zUTJt7iHTM4NcCQM5CPMWkbjdakEAAuDHzOSmnDxGwtWjBkSHy-DwY4vw:1xB4mc:qiEgLra3jJGEFKGFVDDqKicl28dxbCKnVAw8D6KJU2U",
+    "expire_date": "2026-10-12T06:24:14.892Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "osimm8uf3a95vzsvhhpdhz00acu3xbpr",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQRO_iGlmsv4SSPmew1l4vDiBbipMKcXcSKQVMOe_NvEXAdSlh7XkOE4mrAHH67SKmZ647oAfWe5Op1WWeotwVedAux0b5dTvcv4OCvWxr5zUTJt7iHTM4NcCQM5CPMWkbjdakEAAuDHzOSmnDxGwtWjBkSHy-DwY4vw:1xAV5u:glC7vW9C-kHW4tglwYWacZNFM_gVKEyzv9F57U-qeNc",
+    "expire_date": "2026-10-10T16:17:46.703Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ttzqagiyac3lyxwy18kpqgeponu7qwsj",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSG8BZfu-w1kYAapGkhKuzL-uzbpQrf3nHNfLMK21rgNWuKM7MIUO_1uCfKD2g7wDu3Wee5tXebEd4UfdPCpIz2vh_t3UGHUb50FOqdc0aJok7J1GpUNHoOSBAVzEEknKfMZyAD6VAIZiap4sggFkL0_8ck5HQ:1x7nwA:SmusnzkktjXjIbUocZfz7qzwNj-hz03Mx62sjN0-HSw",
+    "expire_date": "2026-10-03T05:48:34.973Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wvmjna26ue2ion4qb4ec8h62smjs9hjg",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSG8BZfu-w1kYAapGkhKuzL-uzbpQrf3nHNfLMK21rgNWuKM7MIUO_1uCfKD2g7wDu3Wee5tXebEd4UfdPCpIz2vh_t3UGHUb50FOqdc0aJok7J1GpUNHoOSBAVzEEknKfMZyAD6VAIZiap4sggFkL0_8ck5HQ:1xAKuV:3by58GNOOhKyh2b3beUw1V1mpdW06qwvBv35jZzzsSI",
+    "expire_date": "2026-10-10T05:25:19.160Z"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 1,
+  "fields": {
+    "name": "Apple"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 2,
+  "fields": {
+    "name": "Samsung"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 3,
+  "fields": {
+    "name": "Oneplus"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 4,
+  "fields": {
+    "name": "Vivo"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 5,
+  "fields": {
+    "name": "Xiaomi"
+  }
+},
+{
+  "model": "store.brand",
+  "pk": 6,
+  "fields": {
+    "name": "Realme"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 1,
+  "fields": {
+    "brand": 1,
+    "name": "iPhone 15",
+    "price": "59999.00",
+    "image": "iPhone15.jpg",
+    "description": "• 6.1-inch Super Retina XDR Display\r\n• A16 Bionic Chip for powerful performance\r\n• 48MP Main Camera for detailed photos\r\n• 12MP Ultra Wide Camera\r\n• 12MP Front Camera for clear selfies\r\n• 128GB Internal Storage\r\n• USB Type-C Connectivity\r\n• Premium and lightweight design\r\n• Advanced safety and privacy features\r\n• Fast and smooth performance for everyday use"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 2,
+  "fields": {
+    "brand": 2,
+    "name": "Samsung Galaxy S24",
+    "price": "64999.00",
+    "image": "Samsung-s24.jpg",
+    "description": "• 6.2-inch Dynamic AMOLED 2X Display\r\n• Snapdragon 8 Gen 3 Processor\r\n• 50MP Main Camera\r\n• 12MP Ultra Wide Camera\r\n• 10MP Telephoto Camera\r\n• 8GB RAM with smooth performance\r\n• 128GB Internal Storage\r\n• 5G Connectivity\r\n• Premium and compact design\r\n• Fast and powerful performance"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 3,
+  "fields": {
+    "brand": 3,
+    "name": "Oneplus 13",
+    "price": "56999.00",
+    "image": "oneplus13.jpg",
+    "description": "• 6.82-inch AMOLED Display\r\n• Snapdragon 8 Elite Processor\r\n• 50MP Main Camera\r\n• 50MP Ultra Wide Camera\r\n• 50MP Telephoto Camera\r\n• High-performance 5G connectivity\r\n• Large battery for long-lasting usage\r\n• Fast charging support\r\n• Premium flagship design\r\n• Smooth performance for gaming and everyday use"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 4,
+  "fields": {
+    "brand": 4,
+    "name": "Vivo  V70",
+    "price": "59995.00",
+    "image": "vivo v70.jpg",
+    "description": "• 6.78-inch AMOLED Display\r\n• Powerful processor for smooth performance\r\n• 50MP Main Camera\r\n• High-quality front camera\r\n• 5G Connectivity\r\n• Large battery for all-day usage\r\n• Fast charging support\r\n• Premium stylish design\r\n• Smooth and responsive user experience\r\n• Great choice for photography and entertainment"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 5,
+  "fields": {
+    "brand": 5,
+    "name": "Xiaomi 15",
+    "price": "54999.00",
+    "image": "xiaomi15.webp",
+    "description": "• 6.36-inch AMOLED Display\r\n• Powerful Snapdragon Processor\r\n• 50MP Main Camera\r\n• Ultra Wide Camera\r\n• Telephoto Camera\r\n• 5G Connectivity\r\n• Long-lasting Battery\r\n• Fast Charging Support\r\n• Premium Glass Design\r\n• Smooth and Fast Performance"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 6,
+  "fields": {
+    "brand": 6,
+    "name": "Realme GT 7",
+    "price": "39999.00",
+    "image": "realmegt7.webp",
+    "description": "• 6.78-inch AMOLED Display\r\n• Powerful MediaTek Dimensity Processor\r\n• High-resolution Main Camera\r\n• Ultra Wide Camera\r\n• 5G Connectivity\r\n• Large-capacity Battery\r\n• Fast Charging Support\r\n• Premium and Stylish Design\r\n• Smooth and Responsive Performance\r\n• Great for Gaming, Photography and Entertainment"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 7,
+  "fields": {
+    "brand": 1,
+    "name": "iPhone  16",
+    "price": "69999.00",
+    "image": "iPhone16.webp",
+    "description": "• 6.1-inch Super Retina XDR Display\r\n• A18 Chip for powerful performance\r\n• 48MP Main Camera\r\n• 12MP Ultra Wide Camera\r\n• 12MP Front Camera\r\n• 128GB Internal Storage\r\n• USB Type-C Connectivity\r\n• 5G Connectivity\r\n• Premium and lightweight design\r\n• Fast and smooth performance"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 8,
+  "fields": {
+    "brand": 1,
+    "name": "iPhone  16 pro",
+    "price": "119999.00",
+    "image": "iPhone16pro.webp",
+    "description": "• 6.3-inch Super Retina XDR Display\r\n• A18 Pro Chip for high performance\r\n• 48MP Main Camera\r\n• 48MP Ultra Wide Camera\r\n• 12MP Telephoto Camera\r\n• 12MP Front Camera\r\n• 128GB Internal Storage\r\n• 5G Connectivity\r\n• Titanium premium design\r\n• Fast and smooth performance"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 9,
+  "fields": {
+    "brand": 1,
+    "name": "iPhone  17",
+    "price": "79999.00",
+    "image": "iPhone17.webp",
+    "description": "• 6.3-inch Super Retina XDR Display\r\n• Advanced Apple Processor\r\n• 48MP Main Camera\r\n• Ultra Wide Camera\r\n• High-quality Front Camera\r\n• 256GB Internal Storage\r\n• 5G Connectivity\r\n• USB Type-C Connectivity\r\n• Premium and stylish design\r\n• Smooth performance for everyday use"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 10,
+  "fields": {
+    "brand": 1,
+    "name": "iPhone  17 pro",
+    "price": "129999.00",
+    "image": "iPhone17pro.webp",
+    "description": "• 6.3-inch Super Retina XDR Display\r\n• Powerful Pro-class Apple Processor\r\n• 48MP Main Camera\r\n• 48MP Ultra Wide Camera\r\n• 12MP Telephoto Camera\r\n• 12MP Front Camera\r\n• 256GB Internal Storage\r\n• 5G Connectivity\r\n• Premium Pro design\r\n• Fast and smooth performance"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 11,
+  "fields": {
+    "brand": 2,
+    "name": "Samsung galaxy  S25",
+    "price": "74999.00",
+    "image": "Samsung-s25.webp",
+    "description": "• 6.2-inch Dynamic AMOLED 2X Display\r\n• Powerful Snapdragon Processor\r\n• 50MP Main Camera\r\n• 12MP Ultra Wide Camera\r\n• 10MP Telephoto Camera\r\n• 12MP Front Camera\r\n• 256GB Internal Storage\r\n• 5G Connectivity\r\n• Premium and compact design\r\n• Fast and smooth performance"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 12,
+  "fields": {
+    "brand": 2,
+    "name": "Samsung galaxy  S24 Ultra",
+    "price": "129999.00",
+    "image": "Samsung-s24ultra.webp",
+    "description": "• 6.8-inch Dynamic AMOLED 2X Display\r\n• Snapdragon 8 Gen 3 Processor\r\n• 200MP Main Camera\r\n• 12MP Ultra Wide Camera\r\n• 50MP Telephoto Camera\r\n• 10MP Telephoto Camera\r\n• 12GB RAM\r\n• 256GB Internal Storage\r\n• 5G Connectivity\r\n• Premium Titanium design"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 13,
+  "fields": {
+    "brand": 2,
+    "name": "Samsung galaxy  S25 Ultra",
+    "price": "139999.00",
+    "image": "Samsung-s25ultra.webp",
+    "description": "• 6.9-inch Dynamic AMOLED 2X Display\r\n• Snapdragon 8 Elite Processor\r\n• 200MP Main Camera\r\n• 50MP Ultra Wide Camera\r\n• 50MP Telephoto Camera\r\n• 50MP Super Telephoto Camera\r\n• 12GB RAM\r\n• 256GB Internal Storage\r\n• 5G Connectivity\r\n• Premium Titanium design"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 14,
+  "fields": {
+    "brand": 2,
+    "name": "Samsung galaxy  A56 5G",
+    "price": "41999.00",
+    "image": "Samsung a56 5g.webp",
+    "description": "• 6.7-inch Super AMOLED Display\r\n• Powerful Exynos Processor\r\n• 50MP Main Camera\r\n• 12MP Ultra Wide Camera\r\n• 5MP Macro Camera\r\n• 12MP Front Camera\r\n• 8GB RAM\r\n• 128GB Internal Storage\r\n• 5G Connectivity\r\n• Long-lasting Battery"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 15,
+  "fields": {
+    "brand": 3,
+    "name": "one plus 12",
+    "price": "55880.00",
+    "image": "one plus 12.jpg",
+    "description": "The OnePlus 12 delivers flagship-grade power, speed, and elegance, powered by the high-performance Snapdragon 8 Gen 3 chipset. It features a stunning 6.82-inch 2K 120Hz ProXDR AMOLED display with LTPO technology, an advanced 4th Gen Hasselblad camera system (50MP main, 64MP periscope telephoto, and 48MP ultra-wide), and a massive 5,400 mAh battery supporting 100W wired and 50W wireless SUPERVOOC charging. Running on a smooth OxygenOS based on Android 14, the device is built to last with durable Corning Gorilla Glass Victus 2 protection and an IP65 rating."
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 16,
+  "fields": {
+    "brand": 3,
+    "name": "one plus norde 5",
+    "price": "374999.00",
+    "image": "one plus norde 5.jpg",
+    "description": "The OnePlus Nord 5 delivers powerful everyday performance and sleek design, powered by the fast and efficient Snapdragon 7+ Gen 3 processor. It features a vibrant 6.74-inch 1.5K 120Hz AMOLED display with ultra-slim bezels, an advanced 50MP Sony main camera with OIS for sharp photos, and a long-lasting 5,500 mAh battery with 100W SUPERVOOC fast charging support. Running on the fluid OxygenOS based on Android 14, this device offers seamless multitasking, fast 5G connectivity, and a premium durable build with an IP65 rating."
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 17,
+  "fields": {
+    "brand": 3,
+    "name": "one plus norde ce6",
+    "price": "29540.00",
+    "image": "one plus norde ce6.webp",
+    "description": "The OnePlus Nord CE 6 delivers smooth daily performance and sleek modern styling, powered by a fast, power-efficient 5G processor. It features a stunning 6.7-inch 120Hz FHD+ AMOLED display with vibrant colors, a 50MP Sony ultra-clear main camera with OIS for sharp photos and steady videos, and a massive 5,500 mAh battery with fast SUPERVOOC charging to keep you powered throughout the day. Running on clean, bloatware-free OxygenOS with dual stereo speakers and IP54 splash resistance, it provides an exceptional, dependable smartphone experience."
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 18,
+  "fields": {
+    "brand": 3,
+    "name": "oneplus norde 6",
+    "price": "54900.00",
+    "image": "oneplus norde 6.webp",
+    "description": "The OnePlus Nord 6 delivers exceptional flagship-level speed, modern style, and reliable performance, powered by the advanced Qualcomm Snapdragon 8s series 5G chipset. It features an immersive 6.74-inch 1.5K 120Hz Pro-Fluid AMOLED display with ultra-narrow bezels, a flagship-grade 50MP Sony main camera with OIS for ultra-clear photos and 4K video recording, and a massive 5,500 mAh battery supported by blazing-fast 100W SUPERVOOC charging. Running on fluid, clean OxygenOS with dual stereo speakers, enhanced heat dissipation, and an IP65 water and dust resistance rating, it provides an outstanding everyday smartphone experience."
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 19,
+  "fields": {
+    "brand": 3,
+    "name": "one plus 13s 5G",
+    "price": "57880.00",
+    "image": "one plus 13s 5g.webp",
+    "description": "The OnePlus 13s 5G combines premium flagship performance with a sleek, modern design, powered by the high-speed Snapdragon 8 Gen series 5G chipset for effortless multitasking and next-level gaming. It features an ultra-smooth 6.78-inch 1.5K 120Hz LTPO AMOLED display with rich colors and HDR10+ support, an advanced 50MP Sony main camera system with OIS for crystal-clear photography in any lighting, and a long-lasting 5,500 mAh battery with ultra-fast 100W SUPERVOOC charging. Running on clean, bloatware-free OxygenOS with dual stereo speakers, robust heat management, and IP65 dust and water resistance, it delivers an extraordinary smartphone experience."
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 20,
+  "fields": {
+    "brand": 4,
+    "name": "vivo v60",
+    "price": "41999.00",
+    "image": "vivo v60.jpg",
+    "description": "6.67-inch AMOLED Display • Powerful processor for smooth performance • 50MP Main Camera • High-quality front camera • 5G Connectivity • Large battery for all-day usage • Fast charging support • Premium stylish design • Smooth and responsive user experience • Great choice for photography and entertainmen"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 21,
+  "fields": {
+    "brand": 4,
+    "name": "vivo v50",
+    "price": "34999.00",
+    "image": "vivo v50.jpg",
+    "description": "6.77-inch AMOLED Display • Powerful performance for everyday use • 50MP Main Camera • High-quality selfie camera • 5G Connectivity • Long-lasting battery • Fast charging support • Stylish premium design • Smooth user experience • Excellent choice for photography, gaming and entertainment"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 22,
+  "fields": {
+    "brand": 4,
+    "name": "vivo v40",
+    "price": "32999.00",
+    "image": "vivo v40.jpg",
+    "description": "6.78-inch AMOLED Display • Smooth and powerful performance • 50MP Main Camera • High-quality front camera • 5G Connectivity • Large battery for all-day usage • Fast charging support • Premium curved design • Smooth and responsive interface • Great for photography and daily entertainment"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 23,
+  "fields": {
+    "brand": 4,
+    "name": "vivo v30",
+    "price": "29999.00",
+    "image": "vivo v30.jpg",
+    "description": "6.78-inch AMOLED Display • Powerful processor for smooth performance • 50MP Main Camera • Clear front camera • 5G Connectivity • Long-lasting battery • Fast charging support • Slim and stylish design • Smooth user experience • Ideal for photography, social media and entertainment"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 24,
+  "fields": {
+    "brand": 4,
+    "name": "vivo x200",
+    "price": "65999.00",
+    "image": "vivo x200.jpg",
+    "description": "6.67-inch AMOLED Display • Flagship-level processor • Advanced 50MP Camera System • High-quality front camera • 5G Connectivity • Large battery with fast charging • Premium flagship design • Smooth and responsive performance • Excellent camera experience • Great choice for photography, gaming and entertainment"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 25,
+  "fields": {
+    "brand": 6,
+    "name": "realme GT5",
+    "price": "35999.00",
+    "image": "realme gt5.jpg",
+    "description": "6.74-inch AMOLED Display • Powerful Snapdragon Processor • High-resolution Main Camera • Ultra Wide Camera • 5G Connectivity • Large Battery for all-day usage • Fast Charging Support • Premium Design • Smooth Performance • Excellent choice for Gaming and Entertainment"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 26,
+  "fields": {
+    "brand": 6,
+    "name": "realme 14pro+",
+    "price": "29999.00",
+    "image": "realme 14pro+.jpg",
+    "description": "6.83-inch AMOLED Display • Powerful Processor for smooth performance • High-resolution Main Camera • Advanced Camera Features • 5G Connectivity • Long-lasting Battery • Fast Charging Support • Stylish Premium Design • Smooth User Experience • Great for Photography and Entertainment"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 27,
+  "fields": {
+    "brand": 6,
+    "name": "realme 13pro+",
+    "price": "32999.00",
+    "image": "realme 13pro+.jpg",
+    "description": "6.7-inch AMOLED Display • Powerful Snapdragon Processor • High-resolution Main Camera • Telephoto Camera • 5G Connectivity • Large Battery • Fast Charging Support • Premium Curved Design • Smooth and Responsive Performance • Great for Photography, Gaming and Entertainment"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 28,
+  "fields": {
+    "brand": 6,
+    "name": "realme p3 pro",
+    "price": "24999.00",
+    "image": "realme p3 pro.jpg",
+    "description": "6.83-inch AMOLED Display • Powerful Snapdragon Processor • High-resolution Main Camera • Clear Front Camera • 5G Connectivity • Large Battery for all-day usage • Fast Charging Support • Stylish Design • Smooth Gaming Performance • Great choice for daily use and entertainment"
+  }
+},
+{
+  "model": "store.mobile",
+  "pk": 29,
+  "fields": {
+    "brand": 6,
+    "name": "realme gt6",
+    "price": "39999.00",
+    "image": "realme gt6.jpg",
+    "description": "6.78-inch AMOLED Display • Powerful Snapdragon Processor • High-resolution Main Camera • Ultra Wide Camera • 5G Connectivity • Large capacity Battery • Fast Charging Support • Premium and Stylish Design • Smooth and Responsive Performance • Great for Gaming, Photography and Entertainment"
+  }
+},
+{
+  "model": "store.cart",
+  "pk": 25,
+  "fields": {
+    "user": 1,
+    "mobile": 7,
+    "quantity": 50
+  }
+},
+{
+  "model": "store.contactmessage",
+  "pk": 2,
+  "fields": {
+    "name": "Masudul Haque",
+    "email": "masudul370@gmail.com",
+    "phone": "06297829161",
+    "message": "Nice mobile store",
+    "created_at": "2026-09-17T15:30:02.351Z"
+  }
+},
+{
+  "model": "store.wishlist",
+  "pk": 7,
+  "fields": {
+    "user": 2,
+    "mobile": 2,
+    "added_at": "2026-09-23T14:18:32.637Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 6,
+  "fields": {
+    "user": 2,
+    "full_name": "unknown",
+    "phone": "unknown",
+    "address": "unknown",
+    "city": "unknown",
+    "pincode": "unknown",
+    "razorpay_order_id": "order_TcBKcWXqdApiDK",
+    "razorpay_payment_id": "pay_TcBLPfSflbswIr",
+    "amount": "59999.00",
+    "status": "Paid",
+    "created_at": "2026-09-15T04:33:36.168Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 7,
+  "fields": {
+    "user": 1,
+    "full_name": "unknown",
+    "phone": "unknown",
+    "address": "unknown",
+    "city": "unknown",
+    "pincode": "unknown",
+    "razorpay_order_id": "order_TcMrRk634Tbc6Y",
+    "razorpay_payment_id": "pay_TcMrq02Ce5Fja6",
+    "amount": "129999.00",
+    "status": "Paid",
+    "created_at": "2026-09-15T15:49:59.196Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 8,
+  "fields": {
+    "user": 1,
+    "full_name": "Masudul Haque",
+    "phone": "6297829161",
+    "address": "krishnagar, nadia ,pin - 741102",
+    "city": "krishnagar ",
+    "pincode": "741101",
+    "razorpay_order_id": "order_TcNg0a1FTqhdtl",
+    "razorpay_payment_id": "pay_TcNgdzcAY7EQHt",
+    "amount": "184993.00",
+    "status": "Paid",
+    "created_at": "2026-09-15T16:38:08.744Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 9,
+  "fields": {
+    "user": 1,
+    "full_name": "Masudul Haque",
+    "phone": "6297829161",
+    "address": "Bogula Road\r\nKrishnagar Nadia",
+    "city": "Nadia",
+    "pincode": "741101",
+    "razorpay_order_id": "order_TczGD7utGtsBom",
+    "razorpay_payment_id": "pay_TczHLEGIsLPHd8",
+    "amount": "59999.00",
+    "status": "Paid",
+    "created_at": "2026-09-17T05:24:46.120Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 10,
+  "fields": {
+    "user": 1,
+    "full_name": "Masudul Haque",
+    "phone": "6297829161",
+    "address": "krishnagar,nadia",
+    "city": "krishnagar ",
+    "pincode": "741101",
+    "razorpay_order_id": "order_Td9VknkKkCkUy6",
+    "razorpay_payment_id": "pay_Td9WMB5MF9f4h1",
+    "amount": "64999.00",
+    "status": "Paid",
+    "created_at": "2026-09-17T15:25:40.576Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 11,
+  "fields": {
+    "user": 1,
+    "full_name": "Masudul Haque",
+    "phone": "6297829161",
+    "address": "krishnagar",
+    "city": "krishnagar ",
+    "pincode": "741101",
+    "razorpay_order_id": "order_TdmeCAOUnsobjt",
+    "razorpay_payment_id": "pay_TdmeTkZdVlCvn7",
+    "amount": "59995.00",
+    "status": "Paid",
+    "created_at": "2026-09-19T05:42:22.013Z"
+  }
+},
+{
+  "model": "store.order",
+  "pk": 12,
+  "fields": {
+    "user": 2,
+    "full_name": "Masudul Haque",
+    "phone": "09064084261",
+    "address": "Bagula road hatkhola para\r\nNear rathtala para masjid",
+    "city": "krishnagar ",
+    "pincode": "741102",
+    "razorpay_order_id": "order_Tdmki8yzoPYwdE",
+    "razorpay_payment_id": "pay_Tdml2D6uJufXqY",
+    "amount": "129999.00",
+    "status": "Paid",
+    "created_at": "2026-09-19T05:48:34.952Z"
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 7,
+  "fields": {
+    "order": 6,
+    "mobile": 1,
+    "quantity": 1,
+    "price": "59999.00"
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 8,
+  "fields": {
+    "order": 7,
+    "mobile": 10,
+    "quantity": 1,
+    "price": "129999.00"
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 9,
+  "fields": {
+    "order": 8,
+    "mobile": 4,
+    "quantity": 1,
+    "price": "59995.00"
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 10,
+  "fields": {
+    "order": 8,
+    "mobile": 1,
+    "quantity": 1,
+    "price": "59999.00"
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 11,
+  "fields": {
+    "order": 8,
+    "mobile": 2,
+    "quantity": 1,
+    "price": "64999.00"
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 12,
+  "fields": {
+    "order": 9,
+    "mobile": 1,
+    "quantity": 1,
+    "price": "59999.00"
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 13,
+  "fields": {
+    "order": 10,
+    "mobile": 2,
+    "quantity": 1,
+    "price": "64999.00"
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 14,
+  "fields": {
+    "order": 11,
+    "mobile": 4,
+    "quantity": 1,
+    "price": "59995.00"
+  }
+},
+{
+  "model": "store.orderitem",
+  "pk": 15,
+  "fields": {
+    "order": 12,
+    "mobile": 10,
+    "quantity": 1,
+    "price": "129999.00"
+  }
+}
+]

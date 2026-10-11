@@ -1,6 +1,7 @@
 import razorpay
 from django.db.models import Q
 from decimal import Decimal
+from django.views.decorators.http import require_post
 from django.conf import settings
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
@@ -286,31 +287,6 @@ def remove_from_wishlist(request, wishlist_item_id):
 
 @login_required(login_url='/login/')
 def payment(request):
-
-    client = razorpay.Client(
-        auth=(
-            settings.RAZORPAY_KEY_ID,
-            settings.RAZORPAY_KEY_SECRET
-        )
-    )
-
-    cart_items = Cart.objects.filter(user=request.user)
-
-    grand_total = 0
-
-    for item in cart_items:
-        grand_total += item.mobile.price * item.quantity
-
-    amount = int(grand_total * 100)
-
-    order = client.order.create({
-        'amount': amount,
-        'currency': 'INR',
-        'payment_capture': 1
-    })
-@login_required(login_url='/login/')
-def payment(request):
-
     order_details = request.session.get('order_details')
 
     if not order_details:
@@ -319,17 +295,29 @@ def payment(request):
     buy_now_mobile_id = request.session.get('buy_now_mobile_id')
 
     if buy_now_mobile_id:
-        mobile = Mobile.objects.get(id=buy_now_mobile_id)
+        mobile = Mobile.objects.filter(id=buy_now_mobile_id).first()
+
+        if not mobile:
+            return redirect('mobiles')
+
         grand_total = mobile.price
+
     else:
         cart_items = Cart.objects.filter(user=request.user)
 
-        grand_total = 0
+        if not cart_items.exists():
+            return redirect('cart')
 
-        for item in cart_items:
-            grand_total += item.mobile.price * item.quantity
+        grand_total = sum(
+            (item.mobile.price * item.quantity for item in cart_items),
+            Decimal('0.00')
+        )
 
     amount = int(grand_total * 100)
+
+    if amount <= 0:
+        messages.error(request, 'Invalid payment amount.')
+        return redirect('cart')
 
     client = razorpay.Client(
         auth=(
@@ -344,15 +332,15 @@ def payment(request):
         'payment_capture': 1
     })
 
+    request.session['razorpay_order_id'] = order['id']
+    request.session['expected_payment_amount'] = amount
+
     return render(request, 'payment.html', {
         'order': order,
         'amount': amount,
         'key_id': settings.RAZORPAY_KEY_ID,
         'grand_total': grand_total
     })
-    
-    from django.http import JsonResponse
-
 @login_required(login_url='/login/')
 def payment_success(request):
     return render(request, 'payment_success.html')
@@ -360,116 +348,120 @@ def payment_success(request):
 
 @login_required(login_url='/login/')
 def verify_payment(request):
+    if request.method != 'POST':
+        return redirect('payment')
 
-    if request.method == 'POST':
+    client = razorpay.Client(
+        auth=(
+            settings.RAZORPAY_KEY_ID,
+            settings.RAZORPAY_KEY_SECRET
+        )
+    )
 
-        client = razorpay.Client(
-            auth=(
-                settings.RAZORPAY_KEY_ID,
-                settings.RAZORPAY_KEY_SECRET
+    data = {
+        'razorpay_order_id': request.POST.get('razorpay_order_id'),
+        'razorpay_payment_id': request.POST.get('razorpay_payment_id'),
+        'razorpay_signature': request.POST.get('razorpay_signature')
+    }
+
+    try:
+        # Confirm this is the order created for the current checkout.
+        expected_order_id = request.session.get('razorpay_order_id')
+        expected_amount = request.session.get('expected_payment_amount')
+
+        if (
+            not expected_order_id
+            or not expected_amount
+            or data['razorpay_order_id'] != expected_order_id
+            or not data['razorpay_payment_id']
+            or not data['razorpay_signature']
+        ):
+            raise ValueError('Invalid payment details.')
+
+        # Verify Razorpay signature.
+        client.utility.verify_payment_signature(data)
+
+        # Fetch payment details from Razorpay and confirm it is captured.
+        payment_info = client.payment.fetch(data['razorpay_payment_id'])
+
+        if (
+            payment_info.get('order_id') != expected_order_id
+            or payment_info.get('status') != 'captured'
+            or int(payment_info.get('amount', 0)) != int(expected_amount)
+            or payment_info.get('currency') != 'INR'
+        ):
+            raise ValueError('Payment is not confirmed.')
+
+        order_details = request.session.get('order_details')
+
+        if not order_details:
+            raise ValueError('Checkout details are missing.')
+
+        mobile_id = request.session.get('buy_now_mobile_id')
+
+        if mobile_id:
+            mobile = Mobile.objects.get(id=mobile_id)
+            order_items = [(mobile, 1)]
+            grand_total = mobile.price
+        else:
+            cart_items = list(
+                Cart.objects.filter(user=request.user).select_related('mobile')
             )
+
+            if not cart_items:
+                raise ValueError('Cart is empty.')
+
+            order_items = [
+                (item.mobile, item.quantity) for item in cart_items
+            ]
+
+            grand_total = sum(
+                (mobile.price * quantity for mobile, quantity in order_items),
+                Decimal('0.00')
+            )
+
+        # Check that the server-side total still matches the paid amount.
+        if int(grand_total * 100) != int(expected_amount):
+            raise ValueError('Order total has changed.')
+
+        order = Order.objects.create(
+            user=request.user,
+            full_name=order_details['full_name'],
+            phone=order_details['phone'],
+            address=order_details['address'],
+            city=order_details['city'],
+            pincode=order_details['pincode'],
+            razorpay_order_id=data['razorpay_order_id'],
+            razorpay_payment_id=data['razorpay_payment_id'],
+            amount=grand_total,
+            status='Paid'
         )
 
-        data = {
-            'razorpay_order_id': request.POST.get('razorpay_order_id'),
-            'razorpay_payment_id': request.POST.get('razorpay_payment_id'),
-            'razorpay_signature': request.POST.get('razorpay_signature')
-        }
-
-        try:
-
-            # Verify Razorpay payment
-            client.utility.verify_payment_signature(data)
-
-            # Get Order Details from session
-            order_details = request.session.get('order_details')
-
-            if not order_details:
-                return redirect('checkout_details')
-
-            amount = request.POST.get('amount')
-
-            # Create Order
-            order = Order.objects.create(
-
-                user=request.user,
-
-                full_name=order_details['full_name'],
-
-                phone=order_details['phone'],
-
-                address=order_details['address'],
-
-                city=order_details['city'],
-
-                pincode=order_details['pincode'],
-
-                razorpay_order_id=data['razorpay_order_id'],
-
-                razorpay_payment_id=data['razorpay_payment_id'],
-
-                amount=amount,
-
-                status='Paid'
+        for mobile, quantity in order_items:
+            OrderItem.objects.create(
+                order=order,
+                mobile=mobile,
+                quantity=quantity,
+                price=mobile.price
             )
 
-            # Check Buy Now
-            mobile_id = request.session.get('buy_now_mobile_id')
+        if not mobile_id:
+            Cart.objects.filter(user=request.user).delete()
 
-            if mobile_id:
+        request.session.pop('order_details', None)
+        request.session.pop('buy_now_mobile_id', None)
+        request.session.pop('razorpay_order_id', None)
+        request.session.pop('expected_payment_amount', None)
 
-                mobile = Mobile.objects.get(id=mobile_id)
+        return redirect('payment_success')
 
-                OrderItem.objects.create(
-
-                    order=order,
-
-                    mobile=mobile,
-
-                    quantity=1,
-
-                    price=mobile.price
-                )
-
-            # Cart Checkout
-            else:
-
-                cart_items = Cart.objects.filter(
-                    user=request.user
-                )
-
-                for item in cart_items:
-
-                    OrderItem.objects.create(
-
-                        order=order,
-
-                        mobile=item.mobile,
-
-                        quantity=item.quantity,
-
-                        price=item.mobile.price
-                    )
-
-                cart_items.delete()
-
-
-            # Clear session
-            request.session.pop('order_details', None)
-            request.session.pop('buy_now_mobile_id', None)
-
-
-            return redirect('payment_success')
-
-
-        except Exception:
-
-            return render(request, 'payment.html', {
-                'error': 'Payment verification failed!'
-            })
-
-
-    return redirect('payment')
+    except Exception:
+        return render(request, 'payment.html', {
+            'error': (
+                'Payment could not be verified. '
+                'Please check My Orders before trying again.'
+            )
+        })
 
 
 @login_required(login_url='/login/')
@@ -486,8 +478,17 @@ def my_orders(request):
     
 @login_required(login_url='/login/')
 def buy_now(request, mobile_id):
+    mobile = Mobile.objects.filter(id=mobile_id).first()
 
-    mobile = Mobile.objects.get(id=mobile_id)
+    if not mobile:
+        messages.error(request, 'Mobile not found.')
+        return redirect('mobiles')
+
+    order_details = request.session.get('order_details')
+
+    if not order_details:
+        request.session['buy_now_mobile_id'] = mobile.id
+        return redirect('order_details', mobile_id=mobile.id)
 
     amount = int(mobile.price * 100)
 
@@ -504,12 +505,16 @@ def buy_now(request, mobile_id):
         'payment_capture': 1
     })
 
+    request.session['buy_now_mobile_id'] = mobile.id
+    request.session['razorpay_order_id'] = order['id']
+    request.session['expected_payment_amount'] = amount
+
     return render(request, 'buy_now.html', {
         'mobile': mobile,
         'order': order,
         'amount': amount,
         'key_id': settings.RAZORPAY_KEY_ID
-    })  
+    })
     
     
 @login_required(login_url='/login/')
